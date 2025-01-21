@@ -32,7 +32,7 @@ SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 SECRET_KEY = 'django-insecure-@^wq4i=g3rn_bxp$!3i9f-^7a+^j-ip*y@==f@8s)rb4@z_r(%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
