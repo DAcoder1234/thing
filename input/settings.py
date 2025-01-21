@@ -32,7 +32,7 @@ SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 SECRET_KEY = 'django-insecure-@^wq4i=g3rn_bxp$!3i9f-^7a+^j-ip*y@==f@8s)rb4@z_r(%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -42,11 +42,11 @@ import os
 STATIC_URL = '/static/'  # URL where static files will be accessible
 
 # On Render, we need to make sure that static files are collected into the correct location
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticF')  # Location where static files will be collected
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Location where static files will be collected
 
 # You can also add custom static file directories if needed (usually not required for most apps)
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'input', 'usersInfo', 'static'),  # Add custom static file folder if needed
+    os.path.join(BASE_DIR,'usersInfo', 'static'),  # Add custom static file folder if needed
 ]
 
 INSTALLED_APPS = [
