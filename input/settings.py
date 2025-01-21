@@ -36,14 +36,18 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
-STATIC_URL = '/static/'
+import os
 
-# For production, add:
-STATIC_ROOT = BASE_DIR /'staticF'
+# STATIC SETTINGS
+STATIC_URL = '/static/'  # URL where static files will be accessible
 
-# For development, make sure:
-STATICFILES_DIRS = []
-# Application definition
+# On Render, we need to make sure that static files are collected into the correct location
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Location where static files will be collected
+
+# You can also add custom static file directories if needed (usually not required for most apps)
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),  # Add custom static file folder if needed
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
