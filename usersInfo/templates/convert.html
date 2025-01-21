@@ -1,0 +1,146 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<style>
+.stack {
+
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: flex-start;
+	align-content: center;
+	flex-direction: column; /* Stack upwards */
+	max-height: 1000px;
+	align-items: center;
+	overflow: visible;
+	margin-right: 10px;
+	transform: rotate(180deg);
+	transform: rotateX(180deg);
+	
+	
+}
+	.stack img{
+		display: block;
+		transform: rotate(180deg)
+	}
+.brick {
+
+	width: 62px; /* Adjust to match your Lego image size */
+
+	height: 35px;
+
+	margin-bottom: -2px;/* Optional for compact stacking */
+	margin-right: 2px;
+	
+}
+	
+	.paper{ margin-right: -4px; width: 100px; height: 100px}
+	html{
+		scroll-behavior: smooth;
+	}
+	.cards{
+		width: 150px; height: 225px
+	}
+	
+	.main{
+		position: fixed;
+		bottom: 50px;
+		right: 10px;
+		
+	}
+	
+	
+</style>
+<body>
+	{% csrf_token %}
+	<div id="head">
+		<link rel="stylesheet" href="{% static '/main.css' %}">
+		<h1>You are {{height}} cm <em>OR...</em></h1>
+		<hr>
+	</div>
+	<div>
+		<p>{{lego}} lego bricks built up</p>
+		<a class="skip" href="#orT">Skip</a>
+		<br><br><br>
+		
+		<div class="stack">
+			{% for x in legor %}
+			<img src="{% static 'lego.png'%}" class="brick">
+			{% endfor %}
+		</div>
+		
+		<h1 id="orT"><strong>OR</strong>...</h1>
+		<p id="toilet">{{toilet}} toilet paper rolls stacked on each other</p>
+		<a href="#orP">Skip</a>
+		<br><br><br>
+		<div class="stack">
+		{% for x in toiletr %}
+		<img class="paper"src="{% static 'toiletP.png'%}">
+		{% endfor %}</div>
+		
+		<h1 id="orP"><strong>OR</strong>...</h1>
+		<p>{{playC}} cards high</p>
+		<a href="#orG">Skip</a>
+		<div class="stack" height="500px">
+		{% for x in playr%}
+			<img class="cards" src="{% static 'card.png' %}">
+		{% endfor %}
+		<!--Not finished-->
+		</div>
+		<h1 id="orG"><strong>OR</strong>...</h1>
+		<p>{{phone}} Google Pixel 9 Pro phones stacked on each other</p>
+		<a href="#orC">Skip</a>
+		<br><br><br>
+		<div class="stack">
+			{% for x in googler %}
+			<img class="phone" src="{% static 'pixel9.png' %}">
+			{% endfor %}
+		</div>
+
+		<h1 id="orC"><strong>OR</strong>...</h1>
+		<p>{{book}} trumpets high</p>
+		<a href="#orS">Skip</a>
+		<br><br><br>
+		<div class="stack">
+			{% for x in comicr %}
+			<img class="comic" src="{% static 'chess.png' %}">
+			{% endfor %}
+		</div>
+		<h1 id="orD"><strong>OR</strong>...</h1>
+        <p>{{door}} doorways high</p>
+		<a href="#orS">Skip</a>
+        <div class="stack">
+            {% for x in doorr %}
+            <img class="door" src="{% static 'doorway.png' %}">
+            {% endfor %}
+        </div>
+		
+		<h1 id="orS"><strong>OR</strong>...</h1>
+		<p>{{suv}} SUVs stacked on each other</p>
+		<a href="#mainPage">Skip</a>
+		<br><br><br>
+		<div class="stack">
+			{% for x in suvr %}
+			<img class="suv" src="{% static 'suv.png' %}">
+			{% endfor %}
+		</div>
+		<div class="main">
+			<a href="/">Main Page</a>
+			
+		</div>
+		
+		
+	
+		
+	</div>
+	
+	
+	
+	
+	
+</body>
+
+
+
+
+</html>
