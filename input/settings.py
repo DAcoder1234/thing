@@ -46,7 +46,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticF')  # Location where static files w
 
 # You can also add custom static file directories if needed (usually not required for most apps)
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),  # Add custom static file folder if needed
+    os.path.join(BASE_DIR, 'input', 'usersInfo', 'static'),  # Add custom static file folder if needed
 ]
 
 INSTALLED_APPS = [
