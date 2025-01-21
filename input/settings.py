@@ -42,7 +42,7 @@ import os
 STATIC_URL = '/static/'  # URL where static files will be accessible
 
 # On Render, we need to make sure that static files are collected into the correct location
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Location where static files will be collected
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticF')  # Location where static files will be collected
 
 # You can also add custom static file directories if needed (usually not required for most apps)
 STATICFILES_DIRS = [
